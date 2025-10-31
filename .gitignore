@@ -1,0 +1,12 @@
+# node
+node_modules
+# builds
+dist
+build
+# env
+.env
+.env.*
+# editor
+.DS_Store
+.vscode/*
+!.vscode/extensions.json

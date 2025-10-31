@@ -1,0 +1,9 @@
+@import "tailwindcss";
+
+/* your tweaks go after the import; wrap in a layer to keep order valid */
+@layer base {
+  :root { color-scheme: dark; }
+  html, body, #root { height: 100%; }
+  * { -webkit-tap-highlight-color: transparent; }
+  button { cursor: pointer; }
+}

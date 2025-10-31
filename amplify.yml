@@ -1,0 +1,22 @@
+version: 1
+backend:
+  phases:
+    build:
+      commands:
+        - npm ci
+        - npx ampx pipeline-deploy --branch $AWS_BRANCH --app-id $AMPLIFY_APP_ID
+frontend:
+  phases:
+    preBuild:
+      commands:
+        - npm --prefix web ci
+    build:
+      commands:
+        - npm --prefix web run build
+  artifacts:
+    baseDirectory: web/dist
+    files:
+      - '**/*'
+  cache:
+    paths:
+      - web/node_modules/**/*
